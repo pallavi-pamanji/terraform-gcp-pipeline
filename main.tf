@@ -1,4 +1,9 @@
 terraform {
+  backend "gcs" {
+    bucket = "terraform-state-qwiklabs-gcp-04-3e7d56fa617d"
+    prefix = "terraform/state"
+  }
+
   required_providers {
     google = {
       source  = "hashicorp/google"
