@@ -1,4 +1,4 @@
-project_id      = "qwiklabs-gcp-04-3e7d56fa617d"
-bucket_name     = "pallavi-bucket-117"
+project_id      = "qwiklabs-gcp-02-f5e29169b61e"
+bucket_name     = "pallavi-bucket-118"
 bucket_location = "US"
-region          = "europe-west4"
+region          = "us-west1"
