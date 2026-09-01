@@ -26,10 +26,10 @@ steps:
       - storage
       - cp
       - index.html
-      - gs://$pallavi-website-118/index.html
+      - gs://$pallavi-bucket-118/index.html
 
 substitutions:
-  _BUCKET_NAME: pallavi-website-118
+  _BUCKET_NAME: pallavi-bucket-118
 
 options:
   logging: CLOUD_LOGGING_ONLY
