@@ -1,4 +1,6 @@
 steps:
+
+  # Step 1 - Initialize and validate Terraform
   - name: hashicorp/terraform:latest
     entrypoint: sh
     args:
@@ -9,12 +11,25 @@ steps:
         terraform validate
         terraform plan -out=tfplan
 
+  # Step 2 - Apply Terraform
   - name: hashicorp/terraform:latest
     entrypoint: sh
     args:
       - -c
       - |
         terraform apply -auto-approve tfplan
+
+  # Step 3 - Upload index.html to the bucket
+  - name: gcr.io/google.com/cloudsdktool/cloud-sdk
+    entrypoint: gcloud
+    args:
+      - storage
+      - cp
+      - index.html
+      - gs://$pallavi-website-118/index.html
+
+substitutions:
+  _BUCKET_NAME: pallavi-website-118
 
 options:
   logging: CLOUD_LOGGING_ONLY
