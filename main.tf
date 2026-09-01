@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket = "terraform-state-qwiklabs-gcp-02-f5e29169b61e"
+    bucket = "terraform-state-remotefile"
     prefix = "terraform/state"
   }
 
