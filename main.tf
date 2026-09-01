@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket = "terraform-state-qwiklabs-gcp-04-3e7d56fa617d"
+    bucket = "terraform-state-qwiklabs-gcp-02-f5e29169b61e"
     prefix = "terraform/state"
   }
 
@@ -20,6 +20,10 @@ provider "google" {
 resource "google_storage_bucket" "my_bucket" {
   name     = var.bucket_name
   location = var.bucket_location
+
+website {
+    main_page_suffix = "index.html"
+  }
 
   labels = {
     environment = "learning"
